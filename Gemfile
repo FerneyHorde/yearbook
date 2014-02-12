@@ -20,7 +20,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'cancan'
 gem 'rolify'
-gem "redcarpet"
+gem 'redcarpet'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
