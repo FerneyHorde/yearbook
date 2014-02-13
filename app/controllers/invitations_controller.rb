@@ -14,6 +14,7 @@ protected
 
   def configure_permitted_parameters
     # Only add some parameters
+    devise_parameter_sanitizer.for(:invite).concat [:name]
     devise_parameter_sanitizer.for(:accept_invitation).concat [:name]
 #    # Override accepted parameters
 #    devise_parameter_sanitizer.for(:accept_invitation) do |u|
