@@ -1,5 +1,5 @@
 Yearbook::Application.routes.draw do
-  get "draft/draft"
+  get 'draft' => "draft#draft"
 
   resources :people
 
@@ -13,13 +13,6 @@ Yearbook::Application.routes.draw do
     patch 'users' => 'devise_invitable/registrations#update', :as => ''
     delete 'users(.:format)' => 'devise_invitable/registrations#destroy'
   end
-# cancel_user_registration GET    /users/cancel(.:format)        devise_invitable/registrations#cancel
-#        user_registration POST   /users(.:format)               devise_invitable/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)       devise_invitable/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)          devise_invitable/registrations#edit
-#                          PATCH  /users(.:format)               devise_invitable/registrations#update
-#                          PUT    /users(.:format)               devise_invitable/registrations#update
-#                          DELETE /users(.:format)               devise_invitable/registrations#destroy
   
 
   # The priority is based upon order of creation: first created -> highest priority.

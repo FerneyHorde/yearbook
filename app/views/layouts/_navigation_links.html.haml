@@ -1,5 +1,8 @@
-%li
-  %a{:href => "#about"} About
-%li
-  %a{:href => "#contact"} Contact
+- if user_signed_in?
+  %li
+    %a{:href => "/families"} Families
+  %li
+    %a{:href => "/people"} People
+  %li
+    %a{href: "/draft"} Draft
 
