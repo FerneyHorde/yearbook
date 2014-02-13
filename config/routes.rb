@@ -5,15 +5,7 @@ Yearbook::Application.routes.draw do
 
   resources :families
 
-  devise_for :users, skip: :registrations
-  as :user do
-    get 'users/cancel(.:format)' => 'devise_invitable/registrations#cancel', as: 'cancel_user_registration'
-    get 'users/edit' => 'devise_invitable/registrations#edit', :as => 'edit_user_registration'
-    put 'users' => 'devise_invitable/registrations#update', :as => 'user_registration'
-    patch 'users' => 'devise_invitable/registrations#update', :as => ''
-    delete 'users(.:format)' => 'devise_invitable/registrations#destroy'
-  end
-  
+  devise_for :users, :controllers => { registrations: "registrations", invitations: "invitations"}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
