@@ -29,7 +29,7 @@ AssetSync.configure do |config|
 end
 
 Fog.credentials = { 
-  endpoint: 'https://s3-website-us-west-2.amazonaws.com/',
+  endpoint: 'https://s3-us-west-2.amazonaws.com/',
   path_style: true 
 }
 
