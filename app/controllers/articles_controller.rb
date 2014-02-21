@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        current_user.add_role :author, @article
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render action: 'show', status: :created, location: @article }
       else

@@ -4,3 +4,4 @@
     = link_to 'Destroy', @article, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %h1= @article.title
 %p= @article.body
+%p by: #{@article.authors.join(', ')}
