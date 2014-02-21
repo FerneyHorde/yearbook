@@ -12,7 +12,7 @@ AssetSync.configure do |config|
   # config.invalidate = ['file1.js']
 
   # Increase upload performance by configuring your region
-  # config.fog_region = 'eu-west-1'
+  config.fog_region = ENV['FOG_REGION'] # 'eu-west-1' 's3-website-us-west-2'
   #
   # Don't delete files from the store
   # config.existing_remote_files = "keep"
@@ -28,5 +28,8 @@ AssetSync.configure do |config|
   # config.fail_silently = true
 end
 
-Fog.credentials = { path_style: true }
+Fog.credentials = { 
+  endpoint: 's3-website-us-west-2.amazonaws.com',
+  path_style: true 
+}
 
