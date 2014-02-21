@@ -5,4 +5,6 @@
 
 - @articles.each do |article|
   %h2= link_to article.title, article
-  %p= article.body
+  :markdown
+    #{article.body}
+  %p.pull-right by: #{article.authors.join(', ')}
