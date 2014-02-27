@@ -1,3 +1,9 @@
+- if can? :manage, Famliy
+  .pull-right
+    = link_to 'New Family', new_family_path
+    %td= link_to 'Show', family
+    %td= link_to 'Edit', edit_family_path(family)
+    %td= link_to 'Destroy', family, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %h1 Listing families
 
 %table
@@ -10,10 +16,4 @@
   - @families.each do |family|
     %tr
       %td= family.name
-      %td= link_to 'Show', family
-      %td= link_to 'Edit', edit_family_path(family)
-      %td= link_to 'Destroy', family, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Family', new_family_path
