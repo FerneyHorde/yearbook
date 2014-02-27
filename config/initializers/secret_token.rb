@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Yearbook::Application.config.secret_key_base = 'fca9d302942abdf45b9f030086ef394a97c7f2fba9fc7537fd84322fded6b322ab0173bbf663e193d583deaf317af280aab2935abb8902a1bd02816feb5c2c20'
+Yearbook::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
