@@ -1,4 +1,6 @@
 Yearbook::Application.routes.draw do
+  resources :days
+
   resources :articles
 
   get 'draft' => "draft#draft"
