@@ -1,18 +1,16 @@
-%p#notice= notice
-
-%p
-  %b Name:
+.pull-right
+  = link_to 'Edit', edit_family_path(@family)
+  \|
+  = link_to 'Back', families_path
+%h1
   = @family.name
 
-= link_to 'Edit', edit_family_path(@family)
-\|
-= link_to 'Back', families_path
-
-%ul
 - @family.people.each do |person|
-  %li
-    = person.name
-    (
-    - person.days.each do |day|
-      = day.name
-    )
+  .person
+    %img{src: person.img}
+    .name= link_me person
+    .days
+      (
+      - person.days.each do |day|
+        = link_me day
+      )

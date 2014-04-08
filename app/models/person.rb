@@ -5,4 +5,8 @@ class Person < ActiveRecord::Base
   def to_s
     name
   end
+
+  def img
+    "/people/#{family}/#{name}.jpg"
+  end
 end

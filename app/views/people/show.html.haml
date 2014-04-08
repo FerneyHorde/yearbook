@@ -1,12 +1,13 @@
-%p#notice= notice
-
+.pull-right
+  %img{src: @person.img}
 %p
   %b Name:
   = @person.name
 %p
   %b Family:
-  = @person.family
+  = link_me @person.family
 
 = link_to 'Edit', edit_person_path(@person)
 \|
 = link_to 'Back', people_path
+
