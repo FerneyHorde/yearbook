@@ -6,6 +6,12 @@
 %p
   %b Family:
   = link_me @person.family
+%p
+  %b born_on:
+  = @person.born_on
+%p
+  %b Age:
+  = @person.age
 
 = link_to 'Edit', edit_person_path(@person)
 \|

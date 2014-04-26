@@ -1,0 +1,11 @@
+%h1 Listing classes     
+
+- @yb_classes.each do |yb_class|   
+
+  .ybclass 
+    %h2= yb_class.name
+    %p= yb_class.desc
+
+%br
+
+= link_to 'New class', new_yb_class_path

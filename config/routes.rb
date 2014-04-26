@@ -1,4 +1,8 @@
 Yearbook::Application.routes.draw do
+  resources :images
+
+  resources :yb_classes
+
   resources :days
 
   resources :articles
