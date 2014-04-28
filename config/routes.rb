@@ -1,4 +1,15 @@
 Yearbook::Application.routes.draw do
+  resources :leaders
+
+  resources :teachers
+
+  resources :activities
+
+  resources :honors
+
+  resources :graduates
+
+  get "autographs/index"
   resources :images
 
   resources :yb_classes

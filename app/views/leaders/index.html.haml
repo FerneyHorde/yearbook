@@ -1,0 +1,21 @@
+%h1 Listing leaders
+
+%table
+  %tr
+    %th Person
+    %th Content
+    %th
+    %th
+    %th
+
+  - @leaders.each do |leader|
+    %tr
+      %td= leader.person
+      %td= leader.content
+      %td= link_to 'Show', leader
+      %td= link_to 'Edit', edit_leader_path(leader)
+      %td= link_to 'Destroy', leader, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Leader', new_leader_path
