@@ -1,12 +1,33 @@
 %li
   %a{:href => "/articles"} Articles
 - if user_signed_in?
-  %li
-    %a{:href => "/families"} Families
-  %li
-    %a{:href => "/people"} People
-  %li
-    %a{href: "/yb_classes"} Classes
-  %li
-    %a{href: "/draft"} Draft
+  %li.dropdown
+    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      Yearbook
+      %b.caret
+    %ul.dropdown-menu
+      %li
+        %a{href: title_path } Title
+      %li
+        %a{href: poem_pages_path } Poem
+      %li
+        %a{href: cheers_path } Cheer
+      %li
+        %a{href: leaders_path } Leaders
+      %li
+        %a{href: teachers_path } Teachers
+      %li
+        %a{href: families_path } Families
+      %li
+        %a{href: people_path } People
+      %li
+        %a{href: yb_classes_path } Classes
+      %li
+        %a{href: activities_path } Activities
+      %li
+        %a{href: honors_path } Honors
+      %li
+        %a{href: graduates_path } Graduates
+      %li
+        %a{href: autographs_path } Autographs
 
