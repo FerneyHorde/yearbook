@@ -1,0 +1,21 @@
+%h1 Listing honors
+
+%table
+  %tr
+    %th Person
+    %th Content
+    %th
+    %th
+    %th
+
+  - @honors.each do |honor|
+    %tr
+      %td= honor.person
+      %td= honor.content
+      %td= link_to 'Show', honor
+      %td= link_to 'Edit', edit_honor_path(honor)
+      %td= link_to 'Destroy', honor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Honor', new_honor_path

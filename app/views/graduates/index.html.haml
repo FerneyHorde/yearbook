@@ -1,0 +1,21 @@
+%h1 Listing graduates
+
+%table
+  %tr
+    %th Person
+    %th Content
+    %th
+    %th
+    %th
+
+  - @graduates.each do |graduate|
+    %tr
+      %td= graduate.person
+      %td= graduate.content
+      %td= link_to 'Show', graduate
+      %td= link_to 'Edit', edit_graduate_path(graduate)
+      %td= link_to 'Destroy', graduate, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Graduate', new_graduate_path

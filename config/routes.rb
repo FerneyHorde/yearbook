@@ -7,6 +7,18 @@ Yearbook::Application.routes.draw do
 
   resources :poem_pages
 
+  resources :leaders
+
+  resources :teachers
+
+  resources :activities
+
+  resources :honors
+
+  resources :graduates
+
+  resources :autographs
+
   resources :images
 
   resources :yb_classes
