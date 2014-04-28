@@ -11,14 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428194113) do
+ActiveRecord::Schema.define(version: 20140428200456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "activities", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cheers", force: true do |t|
+    t.text     "title"
+    t.text     "cheer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +54,24 @@ ActiveRecord::Schema.define(version: 20140428194113) do
     t.datetime "updated_at"
   end
 
+  create_table "graduates", force: true do |t|
+    t.integer  "person_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "graduates", ["person_id"], name: "index_graduates_on_person_id", using: :btree
+
+  create_table "honors", force: true do |t|
+    t.integer  "person_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "honors", ["person_id"], name: "index_honors_on_person_id", using: :btree
+
   create_table "images", force: true do |t|
     t.string   "filename"
     t.string   "caption"
@@ -48,6 +80,15 @@ ActiveRecord::Schema.define(version: 20140428194113) do
     t.integer  "imageable_id"
     t.string   "imageable_type"
   end
+
+  create_table "leaders", force: true do |t|
+    t.integer  "person_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leaders", ["person_id"], name: "index_leaders_on_person_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "name"
@@ -76,6 +117,15 @@ ActiveRecord::Schema.define(version: 20140428194113) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "teachers", force: true do |t|
+    t.integer  "person_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "teachers", ["person_id"], name: "index_teachers_on_person_id", using: :btree
 
   create_table "titles", force: true do |t|
     t.string   "title"
