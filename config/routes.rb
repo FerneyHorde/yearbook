@@ -1,4 +1,7 @@
 Yearbook::Application.routes.draw do
+  resource :title
+  resources :titles
+
   resources :poem_pages
 
   resources :images
