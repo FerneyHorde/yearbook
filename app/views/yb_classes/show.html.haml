@@ -6,7 +6,11 @@
 %p
   %b Desc:
   = @yb_class.desc
+- @yb_class.images.each do |image|
+  %img{src: image.filename }
 
+= link_to 'Destroy', @yb_class, :method => :delete, :data => { :confirm => 'Are you sure?' }
+\|
 = link_to 'Edit', edit_yb_class_path(@yb_class)
 \|
 = link_to 'Back', yb_classes_path
