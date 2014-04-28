@@ -1,4 +1,7 @@
 Yearbook::Application.routes.draw do
+  resources :cheer
+  resources :cheers
+
   resource :title
   resources :titles
 

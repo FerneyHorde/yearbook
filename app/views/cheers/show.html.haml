@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @cheer.title
+%p
+  %b Cheer:
+  = @cheer.cheer
+
+= link_to 'Edit', edit_cheer_path(@cheer)
+\|
+= link_to 'Back', cheers_path
