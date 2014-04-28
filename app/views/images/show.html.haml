@@ -1,12 +1,8 @@
-%p#notice= notice
+.pull-right
+  = link_to 'Edit', edit_image_path(@image)
+  = link_to 'Back', images_path
 
-%p
-  %b Filename:
-  = @image.filename
-%p
-  %b Caption:
-  = @image.caption
+.frame
+  %img{src: @image.filename}
+  .caption= @image.caption
 
-= link_to 'Edit', edit_image_path(@image)
-\|
-= link_to 'Back', images_path
