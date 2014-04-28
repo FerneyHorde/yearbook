@@ -1,9 +1,6 @@
 - if can? :manage, Person
   .pull-right
     = link_to 'New Person', new_person_path
-    %td= link_to 'Show', person
-    %td= link_to 'Edit', edit_person_path(person)
-    %td= link_to 'Destroy', person, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %h1 People
 
@@ -17,5 +14,5 @@
 
   - @people.each do |person|
     %tr
-      %td= person.name
-      %td= person.family
+      %td= link_me person
+      %td= link_me person.family

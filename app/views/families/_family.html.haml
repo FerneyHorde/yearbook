@@ -1,0 +1,13 @@
+.family
+  %h1
+    = family.name
+
+  - family.people.each do |person|
+    .person
+      %img{src: person.img}
+      .name= link_me person
+      .days
+        (
+        - person.days.each do |day|
+          = link_me day
+        )

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @yb_class.name
+%p
+  %b Desc:
+  = @yb_class.desc
+
+= link_to 'Edit', edit_yb_class_path(@yb_class)
+\|
+= link_to 'Back', yb_classes_path

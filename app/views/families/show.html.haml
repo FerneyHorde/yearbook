@@ -1,9 +1,5 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @family.name
-
-= link_to 'Edit', edit_family_path(@family)
-\|
-= link_to 'Back', families_path
+.pull-right
+  = link_to 'Edit', edit_family_path(@family)
+  \|
+  = link_to 'Back', families_path
+= render partial: "families/family", object: @family

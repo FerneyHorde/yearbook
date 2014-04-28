@@ -1,12 +1,19 @@
-%p#notice= notice
-
+.pull-right
+  %img{src: @person.img}
 %p
   %b Name:
   = @person.name
 %p
   %b Family:
-  = @person.family
+  = link_me @person.family
+%p
+  %b born_on:
+  = @person.born_on
+%p
+  %b Age:
+  = @person.age
 
 = link_to 'Edit', edit_person_path(@person)
 \|
 = link_to 'Back', people_path
+
