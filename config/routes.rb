@@ -1,37 +1,25 @@
 Yearbook::Application.routes.draw do
   resources :cheer
   resources :cheers
-
   resource :title
   resources :titles
-
   resources :poem_pages
-
   resources :leaders
-
   resources :teachers
-
   resources :activities
-
   resources :honors
-
   resources :graduates
-
   resources :autographs
-
   resources :images
-
   resources :yb_classes
-
   resources :days
-
   resources :articles
+  resources :people
+  resources :families
+
+  get 'yearbook' => "titles#index"
 
   get 'draft' => "draft#draft"
-
-  resources :people
-
-  resources :families
 
   devise_for :users, :controllers => { registrations: "registrations", invitations: "invitations"}
 
