@@ -1,6 +1,7 @@
 class Person < ActiveRecord::Base
   belongs_to :family
   has_and_belongs_to_many :days
+  default_scope { order('name')}
 
   def to_s
     name
