@@ -1,5 +1,5 @@
 .pull-right
+  = link_to 'Families', families_path
   = link_to 'Edit', edit_family_path(@family)
-  \|
-  = link_to 'Back', families_path
+  = link_to 'Destroy', @family, :method => :delete, :data => { :confirm => 'Are you sure?' }
 = render partial: "families/family", object: @family
