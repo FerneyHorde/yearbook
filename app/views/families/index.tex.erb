@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[margin=2cm]{geometry}
+
+\newlength\cardheight
+\newlength\cardwidth
+
+\setlength\cardheight{0.25\textheight}
+\setlength\cardwidth{0.4\textwidth}
+
+\newcommand\cards[1]{%
+\fbox{\begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-2\fboxsep-2\fboxrule\relax}
+\vspace{\baselineskip}
+\LARGE ~ #1
+\vfill
+\small ~ Cards Against Humanity %I should insert the CAH logo in my final version
+\end{minipage}}% there was a space here
+\hspace{1pt}}
+
+
+\pagestyle{empty}
+
+\begin{document}
+\centering
+\cards{%
+Classicist undertones.
+}%
+\cards{%
+A windmill full of corpses.
+}%
+\cards{%
+A tiny horse.
+}%
+\cards{%
+One more card.
+}%
+
+\end{document} 
