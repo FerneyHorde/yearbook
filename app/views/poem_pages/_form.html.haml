@@ -1,0 +1,9 @@
+= simple_form_for(@poem_page) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :number
+    = f.input :lines
+
+  .form-actions
+    = f.button :submit

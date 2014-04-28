@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @poem_page.number
+%p
+  %b Lines:
+  = @poem_page.lines
+
+= link_to 'Edit', edit_poem_page_path(@poem_page)
+\|
+= link_to 'Back', poem_pages_path

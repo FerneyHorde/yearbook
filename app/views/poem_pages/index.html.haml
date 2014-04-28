@@ -1,0 +1,21 @@
+%h1 Listing poem_pages
+
+%table
+  %tr
+    %th Number
+    %th Lines
+    %th
+    %th
+    %th
+
+  - @poem_pages.each do |poem_page|
+    %tr
+      %td= poem_page.number
+      %td= poem_page.lines
+      %td= link_to 'Show', poem_page
+      %td= link_to 'Edit', edit_poem_page_path(poem_page)
+      %td= link_to 'Destroy', poem_page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Poem page', new_poem_page_path
