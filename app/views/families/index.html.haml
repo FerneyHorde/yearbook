@@ -1,8 +1,9 @@
 - if can? :manage, Family
   .pull-right
     = link_to 'New Family', new_family_path
-%h1 Listing families
+%h1 Families
 
 - @families.each do |family|
   = render partial: "families/family", object: family
+
 
