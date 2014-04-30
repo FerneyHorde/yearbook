@@ -13,6 +13,8 @@
   %b Age:
   = @person.age
 
+= link_to 'Destroy', @person, :method => :delete, :data => { :confirm => 'Are you sure?' }
+\|
 = link_to 'Edit', edit_person_path(@person)
 \|
 = link_to 'Back', people_path
