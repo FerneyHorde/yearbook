@@ -7,6 +7,10 @@ class Person < ActiveRecord::Base
     name
   end
 
+  def full_name
+    "#{name} #{family}"
+  end
+
   def img
     "/people/#{family}/#{name}.jpg"
   end

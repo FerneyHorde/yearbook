@@ -6,8 +6,10 @@
     %h2=link_to yb_class.name, yb_class
     %p= yb_class.desc
 
-  - yb_class.images.each do |image|
-    %img{src: image.filename, height:"240px" }
+    - yb_class.images.each do |image|
+      .frame
+        %img{src: image.filename }
+        .caption= image.caption
 %br
 
 = link_to 'New class', new_yb_class_path
