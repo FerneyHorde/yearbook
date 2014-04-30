@@ -4,7 +4,8 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @un_captioned = Image.where('caption is null').all
+    @images = Image.where('caption is not null').order('caption').all
   end
 
   # GET /images/1

@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Image
+    %th
+    %th
+    %th
+
+  - images.each do |image|
+    %tr
+      %td= link_to image, image
+      %td= link_to 'Edit', edit_image_path(image)
+
+

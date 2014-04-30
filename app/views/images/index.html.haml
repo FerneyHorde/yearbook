@@ -1,20 +1,14 @@
-%h1 Listing images
 
-%table
-  %tr
-    %th Filename
-    %th Caption
-    %th
-    %th
-    %th
+- if @un_captioned and not @un_captioned.empty?
+  .pull-right
+    #h2 UnCaptioned
+    = render partial: 'images', object: @un_captioned
 
-  - @images.each do |image|
-    %tr
-      %td= image.filename
-      %td= image.caption
-      %td= link_to 'Show', image
-      %td= link_to 'Edit', edit_image_path(image)
-      %td= link_to 'Destroy', image, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%h1 Images
+
+= render partial: 'images', object: @images
+
+
 
 %br
 
