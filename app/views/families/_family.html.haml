@@ -1,6 +1,6 @@
 .family
   %h1
-    = family.name
+    = link_to family.name, family
 
   - family.people.each do |person|
     .person
