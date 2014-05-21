@@ -20,6 +20,7 @@ gem 'cancan'
 gem 'rolify'
 gem 'redcarpet'
 gem 'asset_sync'
+gem 'unf'
 gem 'paperclip'
 gem 'will_paginate'
 group :doc do
