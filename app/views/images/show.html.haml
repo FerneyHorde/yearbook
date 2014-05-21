@@ -1,8 +1,12 @@
 .pull-right
+  = link_to 'Index', images_path
   = link_to 'Edit', edit_image_path(@image)
-  = link_to 'Back', images_path
+  = link_to 'Destroy', @image, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 .frame
-  %img{src: @image.filename}
+  - if @image.image
+    = image_tag @image.image
+  - else
+    %img{src: @image.filename}
   .caption= @image.caption
 

@@ -21,6 +21,7 @@ gem 'rolify'
 gem 'redcarpet'
 gem 'asset_sync'
 gem 'unf'
+gem 'paperclip'
 group :doc do
   gem 'sdoc', require: false
 end
