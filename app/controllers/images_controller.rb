@@ -4,8 +4,9 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @un_captioned = Image.where('caption is null').all
-    @images = Image.where('caption is not null').order('caption').all
+    # @un_captioned = Image.where('caption is null').paginate(page: params['page'])
+    # @images = Image.where('caption is not null').order('caption').paginate(page: params['page'])
+    @images = Image.order('caption').paginate(page: params['page'])
   end
 
   # GET /images/1
