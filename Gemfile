@@ -20,6 +20,7 @@ gem 'cancan'
 gem 'rolify'
 gem 'redcarpet'
 gem 'asset_sync'
+gem 'paperclip'
 group :doc do
   gem 'sdoc', require: false
 end

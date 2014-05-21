@@ -4,6 +4,9 @@
   = link_to 'Destroy', @image, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 .frame
-  %img{src: @image.filename}
+  - if @image.image
+    = image_tag @image.image
+  - else
+    %img{src: @image.filename}
   .caption= @image.caption
 
