@@ -23,6 +23,7 @@ gem 'asset_sync'
 gem 'unf'
 gem 'paperclip'
 gem 'will_paginate'
+
 group :doc do
   gem 'sdoc', require: false
 end
