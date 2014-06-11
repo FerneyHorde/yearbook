@@ -3,10 +3,15 @@
   = link_to 'Edit', edit_image_path(@image)
   = link_to 'Destroy', @image, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-.frame
-  - if @image.image
-    = image_tag @image.image.url :medium
-  - else
-    %img{src: @image.filename}
-  .caption= @image.caption
+.frames
+  .frame
+    - if @image.image
+      = image_tag @image.image.url :medium
+    - else
+      %img{src: @image.filename}
+    .caption= @image.caption
+.tags
+  %b Tags:
+  - @image.tags.each do |tag|
+    %span.tag= link_to tag, tag_path(tag)
 

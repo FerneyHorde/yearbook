@@ -10,7 +10,11 @@ Yearbook::Application.routes.draw do
   resources :honors
   resources :graduates
   resources :autographs
-  resources :images
+  resources :images do
+    collection do
+      resources :tags
+    end
+  end
   resources :yb_classes
   resources :days
   resources :articles

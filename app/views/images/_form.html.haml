@@ -1,15 +1,17 @@
 = simple_form_for(@image) do |f|
   = f.error_notification
 
-  .frame
-    - if @image.image
-      = image_tag @image.image
-    - else
-      %img{src: @image.filename}
-    .caption= f.input :caption
+  .frames
+    .frame
+      - if @image.image
+        = image_tag @image.image
+      - else
+        %img{src: @image.filename}
 
+  .caption= f.input :caption
+  .tags= f.input :tags_s, label: 'Tags'
   .form-fields
     = f.input :image, as: :file
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn-primary'
