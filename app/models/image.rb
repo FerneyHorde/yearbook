@@ -15,7 +15,7 @@ class Image < ActiveRecord::Base
     puts fn
     if File.exist? fn
       puts "exists"
-      self.portrait = File.new(fn)
+      self.image = File.new(fn)
       save!
     else
       puts "no exist"
