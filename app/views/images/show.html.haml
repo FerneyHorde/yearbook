@@ -5,7 +5,7 @@
 
 .frame
   - if @image.image
-    = image_tag @image.image.url
+    = image_tag @image.image.url :medium
   - else
     %img{src: @image.filename}
   .caption= @image.caption

@@ -9,4 +9,23 @@ class Image < ActiveRecord::Base
   def to_s
     caption || filename
   end
+
+  def import
+    fn = "public#{filename}"
+    puts fn
+    if File.exist? fn
+      puts "exists"
+      self.portrait = File.new(fn)
+      save!
+    else
+      puts "no exist"
+    end
+  end
+
+  def self.import_all
+    find_each do |person|
+      person.import
+    end
+  end
+
 end
