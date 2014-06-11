@@ -28,4 +28,12 @@ class Image < ActiveRecord::Base
     end
   end
 
+  def tags_s
+    tags.join(', ')
+  end
+
+  def tags_s= str
+    self.tags = str.split(',').collect{|s| s.strip}
+  end
+
 end
