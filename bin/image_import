@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'fileutils'
+require 'pathname'
+require 'find'
+
+def create file
+  ext = File.extname(path).downcase
+  case ext
+  when 'jpeg','jpg','png','gif'
+    Image.create(
+      filename: arg,
+      image: File.new(arg)
+    )
+  end
+end
+
+ARGV.each do |arg|
+  if File.exist? arg 
+    if File.directory? arg
+      Find.find(arg) do |path|
+        next if FileTest.directory?(path)
+        create path
+      end
+    else
+      create arg
+    end
+  end
+end
+
+Image.find_each do |img|
+  next unless img.filename
+  next if img.image_file_size
+  if fn = "public#{img.filename}" and File.exist? fn
+    puts fn
+  elsif fn = "public/images/#{img.id}.jpg" and File.exist? fn
+    puts fn
+    img.image = File.new(fn)
+    img.save
+  end
+end

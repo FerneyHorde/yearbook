@@ -20,6 +20,11 @@ gem 'cancan'
 gem 'rolify'
 gem 'redcarpet'
 gem 'asset_sync'
+gem 'unf'
+gem 'aws-sdk'
+gem 'paperclip'
+gem 'will_paginate'
+
 group :doc do
   gem 'sdoc', require: false
 end

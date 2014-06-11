@@ -1,5 +1,10 @@
 .pull-right
-  %img{src: @person.img}
+  - if @person.portrait.blank?
+    %img{src: @person.img}
+    %div Img
+  - else
+    = image_tag @person.portrait :medium
+    %div Portrait
 %p
   %b Name:
   = @person.name

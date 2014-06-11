@@ -1,21 +1,17 @@
-%h1 Listing images
+.pull-right
+  = link_to 'New Image', new_image_path
+  = will_paginate @posts
 
-%table
-  %tr
-    %th Filename
-    %th Caption
-    %th
-    %th
-    %th
+%h1 Images
 
-  - @images.each do |image|
-    %tr
-      %td= image.filename
-      %td= image.caption
-      %td= link_to 'Show', image
-      %td= link_to 'Edit', edit_image_path(image)
-      %td= link_to 'Destroy', image, :method => :delete, :data => { :confirm => 'Are you sure?' }
+//- if @un_captioned and not @un_captioned.empty?
+//  .pull-right.col-sm-6
+//    #h2 UnCaptioned
+//    = render partial: 'images', object: @un_captioned
 
-%br
+#h2 Captioned
+= render partial: 'images', object: @images
+.pull-right
+  = will_paginate @posts
 
-= link_to 'New Image', new_image_path
+

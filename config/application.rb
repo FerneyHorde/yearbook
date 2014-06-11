@@ -35,5 +35,16 @@ module Yearbook
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.initialize_on_precompile = false
+
+    config.paperclip_defaults = {
+      storage: :s3,
+      s3_host_alias: ENV['FOG_DIRECTORY'],
+      s3_credentials: {
+        :bucket => ENV['FOG_DIRECTORY'],
+        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }
+
   end
 end

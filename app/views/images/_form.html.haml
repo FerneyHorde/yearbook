@@ -2,8 +2,14 @@
   = f.error_notification
 
   .frame
-    %img{src: @image.filename}
+    - if @image.image
+      = image_tag @image.image
+    - else
+      %img{src: @image.filename}
     .caption= f.input :caption
+
+  .form-fields
+    = f.input :image, as: :file
 
   .form-actions
     = f.button :submit

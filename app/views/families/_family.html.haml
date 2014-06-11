@@ -4,7 +4,10 @@
 
   - family.people.each do |person|
     .person
-      %img{src: person.img}
+      - if person.portrait.blank?
+        %img{src: person.img}
+      - else
+        = image_tag person.portrait :thumb
       .name= link_me person
       .days
         (
