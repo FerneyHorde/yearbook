@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :name
+    = f.input :last
     = f.association :family
     = f.input :portrait, as: :file
     = f.input :born_on, start_year: Date.today.year - 90, end_year: Date.today.year

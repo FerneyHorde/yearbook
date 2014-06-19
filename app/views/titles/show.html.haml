@@ -1,15 +1,13 @@
-%p#notice= notice
+.pull-right.edit-nav
+  = link_to 'Index', titles_path
+  = link_to 'New', new_title_path
+  = link_to 'Show', @title
+  = link_to 'Edit', edit_title_path(@title)
+  = link_to 'Destroy', @title, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%p
-  %b Title:
-  = @title.title
-%p
-  %b Subtitle:
-  = @title.subtitle
-%p
-  %b Content:
-  = @title.content
+%h1= @title.title
+%h2= @title.subtitle
+.copy
+  :markdown
+    #{ @title.content }
 
-= link_to 'Edit', edit_title_path(@title)
-\|
-= link_to 'Back', titles_path
