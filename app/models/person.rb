@@ -10,11 +10,11 @@ class Person < ActiveRecord::Base
   validates_attachment_content_type :portrait, :content_type => /\Aimage\/.*\Z/
 
   def to_s
-    name
+    full_name
   end
 
   def full_name
-    "#{name} #{family}"
+    "#{name} #{last}"
   end
 
   def img

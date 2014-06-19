@@ -1,23 +1,13 @@
-%h1 Listing titles
-
-%table
-  %tr
-    %th Title
-    %th Subtitle
-    %th Content
-    %th
-    %th
-    %th
-
-  - @titles.each do |title|
-    %tr
-      %td= title.title
-      %td= title.subtitle
-      %td= title.content
-      %td= link_to 'Show', title
-      %td= link_to 'Edit', edit_title_path(title)
-      %td= link_to 'Destroy', title, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.pull-right
+  = link_to 'New Title Page', new_title_path
+%h1.center Shooting Star
+%h2.center Cache Valley Academy Yearbook
+%h3.center 2014
 
 %br
-
-= link_to 'New Title', new_title_path
+%h3.center Contents
+%ul.center-block.titles
+  - @titles.each do |title| 
+    %li
+      = link_to title.title, title
+ 

@@ -10,5 +10,6 @@
   %body
     = render 'layouts/header'
     %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+      .container
+        = render 'layouts/messages'
+        = yield
