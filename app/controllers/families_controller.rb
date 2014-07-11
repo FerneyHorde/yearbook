@@ -5,6 +5,7 @@ class FamiliesController < ApplicationController
   # GET /families.json
   def index
     @families = Family.all
+    respond_with @families
   end
 
   # GET /families/1

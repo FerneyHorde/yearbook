@@ -1,37 +1,21 @@
-\documentclass{article}
-\usepackage[margin=2cm]{geometry}
+\section*{Families}
+\addcontentsline{toc}{section}{Families}
+\label{sec:Families}
 
-\newlength\cardheight
-\newlength\cardwidth
+<% @families.each do |family| %>
+\subsection*{<%= family %>}
 
-\setlength\cardheight{0.25\textheight}
-\setlength\cardwidth{0.4\textwidth}
+<% family.people.each_slice(4) do |slice| %>
+\begin{figure}[H]
+<% slice.each do |person| %>
+    \begin{minipage}[b]{0.2\linewidth}
+        \centering
+        \includegraphics[width=\textwidth]{img<%= person.portrait.path(:large) %>}
+        <%= person.full_name %>
+    \end{minipage}
+    \hspace{0.5cm}
+<% end %>
+\end{figure}
+<% end %>
 
-\newcommand\cards[1]{%
-\fbox{\begin{minipage}[t][\cardheight][t]{\dimexpr\cardwidth-2\fboxsep-2\fboxrule\relax}
-\vspace{\baselineskip}
-\LARGE ~ #1
-\vfill
-\small ~ Cards Against Humanity %I should insert the CAH logo in my final version
-\end{minipage}}% there was a space here
-\hspace{1pt}}
-
-
-\pagestyle{empty}
-
-\begin{document}
-\centering
-\cards{%
-Classicist undertones.
-}%
-\cards{%
-A windmill full of corpses.
-}%
-\cards{%
-A tiny horse.
-}%
-\cards{%
-One more card.
-}%
-
-\end{document} 
+<% end %>
