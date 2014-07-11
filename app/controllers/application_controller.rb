@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :authenticate_user!
 
-  respond_to :html, :tex
+  respond_to :html, :tex, :txt
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message

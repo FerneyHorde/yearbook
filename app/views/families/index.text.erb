@@ -1,0 +1,5 @@
+<% @families.each do |family| %>
+<% family.people.each do |person| %>
+  <%= person.portrait.url(:large) %> img<%= person.portrait.path(:large) %>
+<% end %>
+<% end %>

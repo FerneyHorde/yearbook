@@ -1,0 +1,7 @@
+<% @families.each do |family| %>
+<% family.people.each do |person| %>
+<% if person.portrait.present? %>
+<%= person.portrait.url(:large, timestamp: false) %>
+<% end %>
+<% end %>
+<% end %>
